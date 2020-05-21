@@ -13,7 +13,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
-    
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/icon_teleport.svg" />
     <title>TelePort: A Lightspeed Deliveries</title>
@@ -80,9 +79,23 @@
             height: 70px; 
             padding: 10px 16px; 
             border-radius: 35px; 
-            
             text-align: center; 
         } 
+
+        .scroller{
+            margin: 30px;
+            background-color: #FF6363;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 70px; 
+            height: 70px; 
+            padding: 10px 16px; 
+            border-radius: 35px; 
+            text-align: center; 
+            color: white;
+            font-size: x-large;
+        }
 
     </style>
 </head>
@@ -100,7 +113,10 @@
             <a class="nav-item nav-link" href="#" id="nav-contact" v-on:click="scrollTo">Contact</a>
             </div>
         </div>
-    </nav>
+        <button v-on:click="scrollTo" id="nav-home" class="scroller btn">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </nav>        
     
     <div class="header mb-5 d-flex align-items-center" id="header"> 
         <div class="container">                         
@@ -190,6 +206,11 @@
             <small>&copy; TelePort 2020, All Rights Reserved</small>
         </div>
     </div>
+
+    <!-- <button class="scroller btn">
+        <i class="fas fa-arrow-up"></i>
+    </button> -->
+
 
     <script>
         var navbar = new Vue({
@@ -352,7 +373,18 @@
             autoplay: false
         })
 
+        var animateScroller = new anime({
+            targets:'.scroller',
+            duration: 500,
+            loop: true,
+            direction: 'alternate',
+            easing: 'linear',
+            scale: 0.9,  
+            autoplay: true
+        })        
+
     </script>
 
 </body>
+
 </html>
