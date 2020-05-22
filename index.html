@@ -30,6 +30,11 @@
             color:#3F3D56 !important;
         }
 
+        ::selection {
+        color:#3F3D56;
+        background:#FF6363;
+        }
+
         .active {
            color: #FF6363 !important;
         }
@@ -113,9 +118,11 @@
             <a class="nav-item nav-link" href="#" id="nav-contact" v-on:click="scrollTo">Contact</a>
             </div>
         </div>
+
         <button v-on:click="scrollTo" id="nav-home" class="scroller btn">
             <i class="fas fa-arrow-up"></i>
         </button>
+
     </nav>        
     
     <div class="header mb-5 d-flex align-items-center" id="header"> 
@@ -203,14 +210,21 @@
     
     <div class="footer d-flex align-items-center">
         <div class="container">
-            <small>&copy; TelePort 2020, All Rights Reserved</small>
+            <div class="row">
+                <div class="col-md-6">
+                    <small>Javascript Frameworks:<span style="color: #FF6363"> Vue.js</span></small><br/>
+                    <small>Javascript Libraries:<span style="color: #FF6363"> Anime.js</span></small><br/>
+                    <small>UI Frameworks: <span style="color: #FF6363"> Bootstrap</span></small><br/>
+                    <small>Font Scripts:<span style="color: #FF6363"> Google Font API</span></small><br/>                    
+                </div>
+                <div class="col-md-6">
+                    <br/>
+                    <small>This is a fictional website</small><br/>
+                    <small>&copy; TelePort 2020, All Rights Reserved</small>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- <button class="scroller btn">
-        <i class="fas fa-arrow-up"></i>
-    </button> -->
-
 
     <script>
         var navbar = new Vue({
